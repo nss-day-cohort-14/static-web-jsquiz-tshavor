@@ -44,7 +44,7 @@
 // 1.) must add an event listener to submit buton here:
 
 var outputEl = document.getElementById("submitButton").addEventListener("click", function (event){
-
+	getValues(pineTree);
 // console.log ("event", event);	
 });
 // this works!
@@ -57,7 +57,6 @@ var outputEl = document.getElementById("submitButton").addEventListener("click",
 function inputKeyUp(event) {
 
     if(event.keyCode === 13) {
-    	// console.log("height", event);
     	getValues(pineTree);
     } 
     // console.log ("ENTER key used!")   
@@ -70,6 +69,7 @@ function getValues (clickEvent) {
 
 	if (pineTree.numHeight === '' || pineTree.treeCharacter === '') {
 		alert("Get to stacking that wood!");
+		console.log (getValues);
 	}
 	else if (pineTree.treeCharacter.length !== 1) {
 		alert("single char only!");
