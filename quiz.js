@@ -12,14 +12,13 @@
 
 // TREE FUNCTION HERE:
 
-
 // Create a tree function that should build a pine tree out of a character in the Chrome dev tools console. 
 	var pineTree = {
 		treeCharacter: "", 
 		numHeight: ""
 	};
 
-  // console.log('HELLO');
+  console.log('HELLO');
 
 // It accepts a single object as an argument. The object should have two key/value pairs.
 
@@ -31,45 +30,37 @@
 	console.log(emptySpace.repeat(centered + parseInt(height.numHeight)/2 - 1),treeWidth);
 	
 	
-
 	for (var i = 0; i <= height.numHeight - 2; i++) {
 		treeWidth = treeWidth + height.treeCharacter + height.treeCharacter;// + height.numHeight;
 		console.log(emptySpace.repeat((centered - i) + parseInt(height.numHeight) / 2 - 1) + treeWidth);
 
 		}
 }
-  // inputHeight=inputHeight.value;
-  
-  // console.log("entered Height Value", inputHeight.value);
-
-  // console.log("enteredCharacterValue", inputChar.value);
-
-  // inputChar=inputChar.value;
-  // var spaces = 1;
+  // console.log();
 
 
 // EVENT LISTENERS HERE:
 
 // 1.) must add an event listener to submit buton here:
-// submitButton.addEventListener('click', tree);
+
+var outputEl = document.getElementById("submitButton").addEventListener("click", function (event){
+
+console.log ("event", event);	
+});
 
 
 // 2.) must add an event listener to the ENTER key:
 
-// window.addEventListener("keydown", function (enter) {
-//   if (event.enter) {
-
-//     console.log ("ENTER key used!")
-//     return; // Should do nothing if the key event was already consumed.
-//   }
-
-// code=13 is for ENTER KEY!
-
-// function showChar(e)
-// {
-// alert("Key Pressed: " + String.fromCharCode(e.charCode) + "\n"
-//       + "charCode: " + e.charCode);
-// }
-// console.log(showChar, "showChar");
 
 
+  
+// This function allows for when the user hits the enter key.  It grows the pine tree just like if they had hit the submit button.
+function inputKeyUp(event) {
+
+    if(event.keyCode === 13) {
+    	// console.log("height", event);
+    	getValues(pineTree);
+    }    
+}
+
+console.log ("ENTER key used!")
