@@ -18,7 +18,7 @@
 		numHeight: ""
 	};
 
-  console.log('HELLO');
+  // console.log('HELLO');
 
 // It accepts a single object as an argument. The object should have two key/value pairs.
 
@@ -45,22 +45,37 @@
 
 var outputEl = document.getElementById("submitButton").addEventListener("click", function (event){
 
-console.log ("event", event);	
+// console.log ("event", event);	
 });
+// this works!
 
 
 // 2.) must add an event listener to the ENTER key:
-
-
-
-  
-// This function allows for when the user hits the enter key.  It grows the pine tree just like if they had hit the submit button.
+ 
+// This function allows for when the user hits the enter key.  
+// It grows the pine tree just like if they had hit the submit button.
 function inputKeyUp(event) {
 
     if(event.keyCode === 13) {
     	// console.log("height", event);
     	getValues(pineTree);
-    }    
+    } 
+    // console.log ("ENTER key used!")   
 }
 
-console.log ("ENTER key used!")
+function getValues (clickEvent) {
+	
+	pineTree.numHeight = document.getElementById('inputHeight').value;
+	pineTree.treeCharacter = document.getElementById('inputChar').value;
+
+	if (pineTree.numHeight === '' || pineTree.treeCharacter === '') {
+		alert("Get to stacking that wood!");
+	}
+	else if (pineTree.treeCharacter.length !== 1) {
+		alert("single char only!");
+	}
+	else {growTree(pineTree)};	
+	}
+
+
+
