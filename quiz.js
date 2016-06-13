@@ -1,61 +1,57 @@
+// Create a tree function that should build a pine tree out of a character in the Chrome dev tools console. It accepts a single object as an argument. The object should have two key/value pairs.
+
+// A key that specifies the height of the pine tree.
+// The value for the height of the tree should be from user input in a <input type="text"> field in the DOM.
+// A key that specifies which character to use to build the pine tree.
+// The character to use should be from user input in a <input type="text"> field in the DOM.
+// Once the user enters in a number, and a character, the user can either then just press the enter key (as long as the cursor is in one of the input fields), or click a button that is labeled "Grow your tree" and the tree should be shown in the console. This requires you to add an event listener to the button, as well as an event listener for the enter/return key.
+
+// If either of the input fields does not have a value in it when the user presses the enter key, or presses the button, then display an alert stating that both fields must have a value.
+
 
 // GET HTML USER INPUT FOR HEIGHT AND TYPE OF CHARACTER
 // DEFINE VARIABLES
 
-// var inputHeight = document.getElementById ("inputHeight");
-// var inputChar = document.getElementById ("inputChar");
-// var submitButton = document.getElementById("submitButton");
-// var enterButton = document.getElementById("enterButton");
-// var spaces=""
+var inputHeight = document.getElementById ("inputHeight");
+var inputChar = document.getElementById ("inputChar");
+var submitButton = document.getElementById("submitButton");
+var enterButton = document.getElementById("enterButton");
+var spaces=""
 
 
 
 // TREE FUNCTION HERE:
 
 
-// Create a tree function that should build a pine tree out of a character in the Chrome dev tools console. 
-	var pineTree = {
-		treeCharacter: "", 
-		numHeight: ""
-	};
 
-  // console.log('HELLO');
 
-// It accepts a single object as an argument. The object should have two key/value pairs.
 
-	function growTree(height) {
-	var treeWidth  = height.treeCharacter;
-	var treeHeight = height.numHeight;
-	var emptySpace = " ";
-	var centered = Math.ceil(height.numHeight / 2);
-	console.log(emptySpace.repeat(centered + parseInt(height.numHeight)/2 - 1),treeWidth);
-	
-	
 
-	for (var i = 0; i <= height.numHeight - 2; i++) {
-		treeWidth = treeWidth + height.treeCharacter + height.treeCharacter;// + height.numHeight;
-		console.log(emptySpace.repeat((centered - i) + parseInt(height.numHeight) / 2 - 1) + treeWidth);
-
-		}
-}
-  // inputHeight=inputHeight.value;
+var tree = function() {
   
-  // console.log("entered Height Value", inputHeight.value);
+  inputHeight=inputHeight.value;
+  // console.log("entered Height Value", enteredHeightValue);
+  inputChar=inputChar.value;
+  // console.log("enteredCharacterValue", enteredCharacterValue);
+  var spaces = 1;
+  // work on function here
 
-  // console.log("enteredCharacterValue", inputChar.value);
 
-  // inputChar=inputChar.value;
-  // var spaces = 1;
 
+
+
+
+};
+
+// document.getElementById('display').innerHTML += '<p>' + pineOutput;
 
 // EVENT LISTENERS HERE:
 
-// 1.) must add an event listener to submit buton here:
-// submitButton.addEventListener('click', tree);
 
+// //must add an event listener to submit buton here:
+// submitButton.addEventListener("click", tree);
 
-// 2.) must add an event listener to the ENTER key:
-
+// // must add an event listener to the ENTER key:
 // window.addEventListener("keydown", function (enter) {
 //   if (event.enter) {
 
