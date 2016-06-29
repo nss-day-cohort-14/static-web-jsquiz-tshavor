@@ -12,7 +12,6 @@
 
 // TREE FUNCTION HERE:
 
-
 // Create a tree function that should build a pine tree out of a character in the Chrome dev tools console. 
 	var pineTree = {
 		treeCharacter: "", 
@@ -31,45 +30,52 @@
 	console.log(emptySpace.repeat(centered + parseInt(height.numHeight)/2 - 1),treeWidth);
 	
 	
-
 	for (var i = 0; i <= height.numHeight - 2; i++) {
 		treeWidth = treeWidth + height.treeCharacter + height.treeCharacter;// + height.numHeight;
 		console.log(emptySpace.repeat((centered - i) + parseInt(height.numHeight) / 2 - 1) + treeWidth);
 
 		}
 }
-  // inputHeight=inputHeight.value;
-  
-  // console.log("entered Height Value", inputHeight.value);
-
-  // console.log("enteredCharacterValue", inputChar.value);
-
-  // inputChar=inputChar.value;
-  // var spaces = 1;
+  // console.log();
 
 
 // EVENT LISTENERS HERE:
 
 // 1.) must add an event listener to submit buton here:
-// submitButton.addEventListener('click', tree);
+
+var outputEl = document.getElementById("submitButton").addEventListener("click", function (event){
+	getValues(pineTree);
+// console.log ("event", event);	
+});
+// this works!
 
 
 // 2.) must add an event listener to the ENTER key:
+ 
+// This function allows for when the user hits the enter key.  
+// It grows the pine tree just like if they had hit the submit button.
+function inputKeyUp(event) {
 
-// window.addEventListener("keydown", function (enter) {
-//   if (event.enter) {
+    if(event.keyCode === 13) {
+    	getValues(pineTree);
+    } 
+    // console.log ("ENTER key used!")   
+}
 
-//     console.log ("ENTER key used!")
-//     return; // Should do nothing if the key event was already consumed.
-//   }
+function getValues (clickEvent) {
+	
+	pineTree.numHeight = document.getElementById('inputHeight').value;
+	pineTree.treeCharacter = document.getElementById('inputChar').value;
 
-// code=13 is for ENTER KEY!
+	if (pineTree.numHeight === '' || pineTree.treeCharacter === '') {
+		alert("Get to stacking that wood!");
+		console.log (getValues);
+	}
+	else if (pineTree.treeCharacter.length !== 1) {
+		alert("single char only!");
+	}
+	else {growTree(pineTree)};	
+	}
 
-// function showChar(e)
-// {
-// alert("Key Pressed: " + String.fromCharCode(e.charCode) + "\n"
-//       + "charCode: " + e.charCode);
-// }
-// console.log(showChar, "showChar");
 
 

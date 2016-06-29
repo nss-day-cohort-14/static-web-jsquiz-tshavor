@@ -9,15 +9,18 @@
 		
   		<p>Please enter your desired tree height here (between 3-10):</p>
 
-			<input type="text" id="inputHeight" required placeholder="Type here">
+			<input onkeypress ="inputKeyUp(event)"type="text" id="inputHeight" required placeholder="Type here">
 
-		<p>Please enter your character of choice here (@,#,$,%,*):</p>
+		<p>Please enter a character from the following list(@,#,$,%,*):</p>
 
-			<input type="text" id="inputChar" placeholder="Type here" required pattern="?#$%*">
+			<input onkeypress ="inputKeyUp(event)" type="text" id="inputChar" placeholder="Type here" required pattern="?#$%*">
 			
 		<p></p>
 
-			<input type="submit" id="submitButton" value="Grow Your Tree"/>
+			<input type="submit" id="submitButton" value="Grow Your Tree" click="getValues">
+
+	<!-- <div id=bonehead></div> -->
+
 
 	<script src="quiz.js"></script>
   </body>
